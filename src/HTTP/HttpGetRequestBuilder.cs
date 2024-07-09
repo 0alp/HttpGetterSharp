@@ -1,4 +1,4 @@
-﻿using http_client_c_sharp.HTTP.Abstractions;
+﻿using HttpGetterSharp.HTTP.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace http_client_c_sharp.HTTP
+namespace HttpGetterSharp.HTTP
 {
     /// <summary>
     /// Provides functionality to build HTTP GET request messages.

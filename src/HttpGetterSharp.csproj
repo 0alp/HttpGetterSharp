@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\Users\Alperen\Desktop\http-client-c-sharp\bin\Debug\net7.0\http-client-c-sharp.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Alperen\Desktop\http-client-c-sharp\docs\HttpGetterSharp.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

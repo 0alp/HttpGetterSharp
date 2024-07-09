@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace http_client_c_sharp.HTTP
+namespace HttpGetterSharp.HTTP
 {
     /// <summary>
     /// Provides functionality to create, send, and receive HTTP requests over a TCP network connection.

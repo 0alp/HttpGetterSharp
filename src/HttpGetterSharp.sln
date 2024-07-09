@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "http-client-c-sharp", "http-client-c-sharp.csproj", "{222AB2D2-E9D6-40DF-AC7A-12E43380EDE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpGetterSharp", "HttpGetterSharp.csproj", "{222AB2D2-E9D6-40DF-AC7A-12E43380EDE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
