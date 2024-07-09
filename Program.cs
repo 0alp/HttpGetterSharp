@@ -9,19 +9,13 @@ namespace http_client_c_sharp
     static class Program
     {
 
-        static void Main(string[] argvs)
+        static void Main(string[] args)
         {
            
-
-
         }
-
-       
-
-
+      
     }
 
 
     
-
 }

@@ -13,7 +13,8 @@ namespace http_client_c_sharp.HTTP
         readonly IPAddress _address;
         readonly int _port;
         NetworkStream _stream;
-        public string ResponseMessage { get; set; }
+
+        
         public HttpConnectionService(IPAddress ipAddress, int port = 80)
         {
             _address = ipAddress;
@@ -71,7 +72,7 @@ namespace http_client_c_sharp.HTTP
 
 
         }
-        public async Task<byte[]> ReceiveHttpResponse()
+        public async Task<string> ReceiveHttpResponse()
         {
 
             byte[] buffer = new byte[1024];
@@ -90,7 +91,7 @@ namespace http_client_c_sharp.HTTP
             }
 
 
-            return buffer;
+            return Encoding.UTF8.GetString(buffer);
 
 
 
