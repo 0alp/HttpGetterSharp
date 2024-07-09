@@ -6,6 +6,8 @@
     <RootNamespace>http_client_c_sharp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Alperen\Desktop\http-client-c-sharp\bin\Debug\net7.0\http-client-c-sharp.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

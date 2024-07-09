@@ -8,29 +8,40 @@ using System.Threading.Tasks;
 
 namespace http_client_c_sharp.HTTP
 {
+    /// <summary>
+    /// Provides functionality to create, send, and receive HTTP requests over a TCP network connection.
+    /// </summary>
     internal class HttpConnectionService
     {
         readonly IPAddress _address;
-        readonly int _port;
+        readonly int _port = 80;
         NetworkStream _stream;
 
-        
-        public HttpConnectionService(IPAddress ipAddress, int port = 80)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HttpConnectionService"/> class with the specified IP address.
+        /// </summary>
+        /// <param name="ipAddress">The IP address of the HTTP server.</param>
+        public HttpConnectionService(IPAddress ipAddress)
         {
             _address = ipAddress;
-            _port = port;
+            
 
         }
-
-        public HttpConnectionService(string domainName, int port = 80)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HttpConnectionService"/> class with the specified Domain name.
+        /// </summary>
+        /// <param name="domainName">The Domain name of the HTTP server.</param>
+        public HttpConnectionService(string domainName)
         {
             
             _address = Dns.GetHostAddresses(domainName)[0];
-            _port = port;
 
         }
 
-
+        /// <summary>
+        /// Asynchronously creates an HTTP connection to port 80 of the specified IP address.
+        /// </summary>
+        /// <returns>Returns true if the connection is successfully established; otherwise, false.</returns>
         public async Task<bool> CreateHttpConnection()
         {
             TcpClient client;
@@ -56,7 +67,11 @@ namespace http_client_c_sharp.HTTP
 
 
         }
-
+        /// <summary>
+        /// Asynchronously sends an HTTP request message over the established connection.
+        /// </summary>
+        /// <param name="requestMessage">The HTTP request message to be sent.</param>
+        /// <exception cref="InvalidOperationException">Thrown when the connection is not established or the stream is not writable.</exception>
         public async Task SendHttpRequest(string requestMessage)
         {
             if (_stream == null || !_stream.CanWrite)
@@ -72,6 +87,11 @@ namespace http_client_c_sharp.HTTP
 
 
         }
+        /// <summary>
+        /// Asynchronously receives an HTTP response message from the established connection.
+        /// </summary>
+        /// <returns>Returns the received HTTP response message as a string.</returns>
+        /// <exception cref="InvalidOperationException">Thrown when the connection is not established or the stream is not readable.</exception>
         public async Task<string> ReceiveHttpResponse()
         {
 

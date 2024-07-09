@@ -12,3 +12,4 @@ C:\Users\Alperen\Desktop\http-client-c-sharp\obj\Debug\net7.0\refint\http-client
 C:\Users\Alperen\Desktop\http-client-c-sharp\obj\Debug\net7.0\http-client-c-sharp.pdb
 C:\Users\Alperen\Desktop\http-client-c-sharp\obj\Debug\net7.0\http-client-c-sharp.genruntimeconfig.cache
 C:\Users\Alperen\Desktop\http-client-c-sharp\obj\Debug\net7.0\ref\http-client-c-sharp.dll
+C:\Users\Alperen\Desktop\http-client-c-sharp\bin\Debug\net7.0\http-client-c-sharp.xml

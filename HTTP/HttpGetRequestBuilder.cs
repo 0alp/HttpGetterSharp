@@ -9,10 +9,17 @@ using System.Threading.Tasks;
 
 namespace http_client_c_sharp.HTTP
 {
+    /// <summary>
+    /// Provides functionality to build HTTP GET request messages.
+    /// </summary>
     internal class HttpGetRequestBuilder : IHttpRequest
     {
 
-
+        /// <summary>
+        /// Builds a basic HTTP GET request message with the specified host.
+        /// </summary>
+        /// <param name="host">The host to include in the HTTP request message.</param>
+        /// <returns>The HTTP GET request message as a string.</returns>
         public string BuildRequest(string host) 
         {
             return $"GET / HTTP/1.1\r\n"+
@@ -24,6 +31,12 @@ namespace http_client_c_sharp.HTTP
 
             
         }
+        /// <summary>
+        /// Builds an HTTP GET request message with the specified host and optionally includes default headers.
+        /// </summary>
+        /// <param name="host">The host to include in the HTTP request message.</param>
+        /// <param name="includeDefaultHeaders">Indicates whether to include default headers in the HTTP request message.</param>
+        /// <returns>The HTTP GET request message as a string.</returns>
         public string BuildRequest(string host, bool includeDefaultHeaders)
         {
             string requestMessage = $"GET / HTTP/1.1\r\n" +
@@ -48,7 +61,13 @@ namespace http_client_c_sharp.HTTP
             return requestMessage;
         }
 
-
+        /// <summary>
+        /// Builds an HTTP GET request message with the specified host, HTTP version, etc. optional headers.
+        /// </summary>
+        /// <param name="host">The host to include in the HTTP request message.</param>
+        /// <param name="httpVersion">The HTTP version to include in the HTTP request message.</param>
+        /// <param name="headers">Optional headers to include in the HTTP request message.</param>
+        /// <returns>The HTTP GET request message as a <see cref="StringBuilder"/>.</returns>
         public StringBuilder BuildRequest(string host, string httpVersion, Dictionary<string, string> headers = null)
         {
 
