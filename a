@@ -1,0 +1,84 @@
+[33mcommit 082902c762cae6e94b00cfd9eb41b05057b7fda7[m[33m ([m[1;36mHEAD -> [m[1;32mfeatures[m[33m)[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 09:18:37 2024 +0300
+
+    Add XML summary documentation for classes and methods
+    - Added XML summary documentation for the HttpConnectionService class and its methods.
+    - Added XML summary documentation for the HttpGetRequestBuilder class and its methods.
+    - Added XML summary documentation for the IHttpRequest interface and its method.
+    
+    These summaries provide clear descriptions of the purpose and functionality of each class and method, enhancing code readability and maintainability.
+
+[33mcommit e7cdce5b25d53068945c985341590e78d9985564[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 08:12:49 2024 +0300
+
+    Update HttpGetRequestBuilder->BuildRequest(string h..., bool inc...)->User-Agent string dynamically based on operating system architecture
+
+[33mcommit d7119085f3bca52b7f213806b06decd506fe025e[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 06:08:38 2024 +0300
+
+    Update csproj files
+
+[33mcommit a244a92a5aab5aba1bf89238a3906a691d867ab1[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 06:01:07 2024 +0300
+
+    Improve code readability, remove unnecessary code, and resolve stream stalling issue
+    
+    -Fixed stream stalling issue by adding "if (!_stream.DataAvailable)" code block.
+    -The ability to operate with domain names has been added.
+
+[33mcommit 414ccdda34a331f88a55476658c46bfa2f43415f[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 05:46:16 2024 +0300
+
+    Enhance readability and remove unnecessary code in HttpGetRequestBuilder.cs
+    
+    -Readability improved.
+    -Fixed the error in the http format that gave the "505 - http version not supported" error.
+    -Due to interface implementation requirements, return types outside of BuildRequest were converted to string.
+    -Converted return types of BuildRequest methods to string as per interface implementation requirements, except for BuildRequest overloads that accept extra headers.
+
+[33mcommit 48dcc071a49db7cfd133afb734602e823adede49[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 05:42:09 2024 +0300
+
+    Refactor IHttpRequest->BuildRequest() return type to string
+
+[33mcommit 2a08eeebe96887c36951bd2022f22715d85c4861[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 01:18:26 2024 +0300
+
+    Update csproj files
+
+[33mcommit b34f1a8f641932c2930add7070282a4c3ed02936[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 01:13:32 2024 +0300
+
+    Create class that establishes http connection over tcp socket
+    
+    -A class named HttpConnectionService was created to establish an HTTP connection over a TCP socket and handle socket listening.
+
+[33mcommit 30e76d2e6c71eba0792a910804f8addba2033e81[m[33m ([m[1;32mmaster[m[33m)[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 00:54:49 2024 +0300
+
+    Create class to build http get message
+    
+    An HttpGetRequestBuilder class was created inheriting from IHttpRequest to enable building of GET messages, allowing addition of desired headers.
+
+[33mcommit c887867c92c71a76bd78c8d2227a072ea81badd4[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Tue Jul 9 00:51:31 2024 +0300
+
+    Create abstraction for http requests
+    
+    -An interface named IHttpRequest was created and an abstraction was made for potential http requests.
+
+[33mcommit 48ec9f3657f5e128497bbde881f94366a658d579[m
+Author: 0alp <alperenqwe@hotmail.com>
+Date:   Sun Jul 7 21:07:24 2024 +0300
+
+    initial commit
