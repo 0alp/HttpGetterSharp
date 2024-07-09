@@ -17,8 +17,8 @@ namespace HttpGetterSharp.HTTP.Abstractions
         /// Builds an HTTP request message for the specified host.
         /// </summary>
         /// <param name="host">The host for which the request is being built.</param>
-        /// <returns>A string representing the HTTP request message.</returns>
-        string BuildRequest(string host);
+        /// <returns>A StringBuilder representing the HTTP request message.</returns>
+        StringBuilder BuildRequest(string host);
 
 
 
