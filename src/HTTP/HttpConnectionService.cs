@@ -94,30 +94,31 @@ namespace HttpGetterSharp.HTTP
         /// <exception cref="InvalidOperationException">Thrown when the connection is not established or the stream is not readable.</exception>
         public async Task<string> ReceiveHttpResponse()
         {
-
-            byte[] buffer = new byte[1024];
+            const int maxBufferSize = 8192; 
+            byte[] buffer = new byte[maxBufferSize];
             int len;
             int totalBytesRead = 0;
+
             if (_stream == null || !_stream.CanRead)
                 throw new InvalidOperationException("Connection is not established or stream is not readable.");
 
             while ((len = await _stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
             {
-
-                await _stream.WriteAsync(buffer, 0, len);
                 totalBytesRead += len;
-                if (!_stream.DataAvailable)
+
+                if (_stream.DataAvailable)
+                {
+                    int newBufferSize = Math.Min(maxBufferSize, totalBytesRead * 2); 
+                    Array.Resize(ref buffer, newBufferSize);
+                }
+                else
+                {
                     break;
+                }
             }
 
-
-            return Encoding.UTF8.GetString(buffer);
-
-
-
-
+            return Encoding.UTF8.GetString(buffer, 0, totalBytesRead);
         }
-
 
     }
 }
