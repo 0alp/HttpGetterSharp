@@ -11,7 +11,7 @@ namespace http_client_c_sharp.HTTP.Abstractions
 
 
 
-        StringBuilder BuildRequest(string host);
+        string BuildRequest(string host);
 
 
 
