@@ -1,15 +1,91 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>http-client-c-sharp</name>
+        <name>HttpGetterSharp</name>
     </assembly>
     <members>
-        <member name="M:http_client_c_sharp.HTTP.HttpConnectionService.#ctor(System.Net.IPAddress,System.Int32)">
+        <member name="T:HttpGetterSharp.HTTP.Abstractions.IHttpRequest">
             <summary>
-            Initializes a new instance of the <see cref="T:http_client_c_sharp.HTTP.HttpConnectionService"/> class with the specified IP address and port.
+            Defines the methods required to build HTTP request messages.
+            </summary>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.Abstractions.IHttpRequest.BuildRequest(System.String)">
+            <summary>
+            Builds an HTTP request message for the specified host.
+            </summary>
+            <param name="host">The host for which the request is being built.</param>
+            <returns>A StringBuilder representing the HTTP request message.</returns>
+        </member>
+        <member name="T:HttpGetterSharp.HTTP.HttpConnectionService">
+            <summary>
+            Provides functionality to create, send, and receive HTTP requests over a TCP network connection.
+            </summary>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.#ctor(System.Net.IPAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpGetterSharp.HTTP.HttpConnectionService"/> class with the specified IP address.
             </summary>
             <param name="ipAddress">The IP address of the HTTP server.</param>
-            <param name="port">The port number to connect to (default is 80).</param>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpGetterSharp.HTTP.HttpConnectionService"/> class with the specified Domain name.
+            </summary>
+            <param name="domainName">The Domain name of the HTTP server.</param>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.CreateHttpConnection">
+            <summary>
+            Asynchronously creates an HTTP connection to port 80 of the specified IP address.
+            </summary>
+            <returns>Returns true if the connection is successfully established; otherwise, false.</returns>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.SendHttpRequest(System.String)">
+            <summary>
+            Asynchronously sends an HTTP request message over the established connection.
+            </summary>
+            <param name="requestMessage">The HTTP request message to be sent.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the connection is not established or the stream is not writable.</exception>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.ReceiveHttpResponse">
+            <summary>
+            Asynchronously receives an HTTP response message from the established connection.
+            </summary>
+            <returns>Returns the received HTTP response message as a string.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when the connection is not established or the stream is not readable.</exception>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpConnectionService.CloseHttpConnection">
+            <summary>
+            Closes the current HTTP connection by closing and disposing the underlying stream and client.
+            Reads any remaining data from the stream, half-closes the connection, and disposes of the resources.
+            </summary>
+            <remarks>
+            This method ensures that all data in the stream is read before closing the connection.
+            It performs a half-close operation on the stream and disposes of the resources safely.
+            It terminates the connection according to the TCP standard by sending the FIN bit instead of RST.
+            </remarks>
+        </member>
+        <member name="T:HttpGetterSharp.HTTP.HttpGetRequestBuilder">
+            <summary>
+            Provides functionality to build HTTP GET request messages.
+            </summary>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpGetRequestBuilder.BuildRequest(System.String)">
+            <summary>
+            Builds an HTTP GET request message with the specified host.
+            Includes default headers such as User-Agent, Accept, Accept-Language, Accept-Encoding,
+            Connection, Upgrade-Insecure-Requests, and Priority.
+            </summary>
+            <param name="host">The host to include in the HTTP request message.</param>
+            <returns>The HTTP GET request message as a StringBuilder.</returns>
+        </member>
+        <member name="M:HttpGetterSharp.HTTP.HttpGetRequestBuilder.BuildRequest(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Builds an HTTP GET request message with the specified host and optional headers.
+            </summary>
+            <param name="host">The host to include in the HTTP request message.</param>
+            <param name="httpVersion">The HTTP version to include in the HTTP request message.</param>
+            <param name="headers">Optional headers to include in the HTTP request message.</param>
+            <returns>The HTTP GET request message as a StringBuilder.</returns>
         </member>
     </members>
 </doc>

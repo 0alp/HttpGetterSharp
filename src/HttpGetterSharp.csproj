@@ -1,17 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>http_client_c_sharp</RootNamespace>
+    <RootNamespace>HttpGetterSharp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\Users\Alperen\Desktop\http-client-c-sharp\docs\HttpGetterSharp.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\Alperen\Desktop\HttpGetterSharp\docs\HttpGetterSharp.xml</DocumentationFile>
+    <PackageID>HttpGetterSharp</PackageID>
+    <version>1.0.0</version>
+    <Author>Alp</Author>
+    <Product>HttpGetterSharp</Product>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="HTTP\Abstractions\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\LICENSE" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
