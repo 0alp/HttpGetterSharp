@@ -11,15 +11,18 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Users\Alperen\Desktop\HttpGetterSharp\docs\HttpGetterSharp.xml</DocumentationFile>
     <PackageID>HttpGetterSharp</PackageID>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <Author>Alp</Author>
+    <Description>A simple, fast C# library designed for sending HTTP GET requests and handling responses.</Description>
     <Product>HttpGetterSharp</Product>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="HTTP\Abstractions\" />
     <None Include="..\README.md" Pack="true" PackagePath="\"/>
     <None Include="..\LICENSE" Pack="true" PackagePath="\"/>
+    <None Include="..\logo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
