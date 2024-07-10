@@ -3,7 +3,7 @@
 HttpGetterSharp is a lightweight C# library designed for sending HTTP GET requests and efficiently handling responses. It simplifies the process of making HTTP requests and processing the returned data in C# applications.
 You can simply and quickly create and send http get requests and receive their responses.
 
-## Key Features
+## Key Features :pushpin:
 
 - Generate custom or pre-defined HTTP request formats for your HTTP requests.
 - Send an HTTP GET request.
@@ -161,6 +161,9 @@ Content-Length: 1256
  }
 ```
 
-## License
+## License :page_with_curl: 
 
 HttpGetterSharp is licensed under the MIT License. See the LICENSE file for details.
+
+## Useful Links :heart:
+- developer.mozilla.org/en-US/docs/Web/HTTP

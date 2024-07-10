@@ -48,7 +48,7 @@ namespace HttpGetterSharp.HTTP
         /// <param name="httpVersion">The HTTP version to include in the HTTP request message.</param>
         /// <param name="headers">Optional headers to include in the HTTP request message.</param>
         /// <returns>The HTTP GET request message as a StringBuilder.</returns>
-        public StringBuilder BuildRequest(string host, string httpVersion, Dictionary<string, string> headers = null)
+        public StringBuilder BuildRequest(string host, string httpVersion, Dictionary<string, string>? headers = null)
         {
 
             StringBuilder request = new StringBuilder();
