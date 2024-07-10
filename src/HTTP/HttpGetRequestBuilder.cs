@@ -29,7 +29,7 @@ namespace HttpGetterSharp.HTTP
             stringBuilder.Append("GET / HTTP/1.1\r\n");
             stringBuilder.Append($"Host: {host}\r\n");
 
-            stringBuilder.AppendLine($"User-Agent: zeroalp/1.0 ({Environment.OSVersion.VersionString}; {(Environment.Is64BitOperatingSystem ? "x64" : "x86")}; rv:1.0) Gecko/20100101 zeroalp/1.0\r\n");
+            stringBuilder.AppendLine($"User-Agent: zeroalp/1.0 ({Environment.OSVersion.VersionString}; {(Environment.Is64BitOperatingSystem ? "x64" : "x86")};\r\n");
             stringBuilder.AppendLine("Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\n");
             stringBuilder.AppendLine($"Accept-Language: {CultureInfo.CurrentCulture.Name},en;q=0.8,en-US;q=0.5,en;q=0.3\r\n");
             stringBuilder.AppendLine("Accept-Encoding: gzip, deflate\r\n");

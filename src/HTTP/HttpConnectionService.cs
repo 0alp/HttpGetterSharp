@@ -13,6 +13,7 @@ namespace HttpGetterSharp.HTTP
     /// </summary>
     internal class HttpConnectionService
     {
+        TcpClient _client;
         readonly IPAddress _address;
         readonly int _port = 80;
         NetworkStream _stream;
@@ -24,7 +25,8 @@ namespace HttpGetterSharp.HTTP
         public HttpConnectionService(IPAddress ipAddress)
         {
             _address = ipAddress;
-            
+            InitTcpClient();
+
 
         }
         /// <summary>
@@ -35,8 +37,22 @@ namespace HttpGetterSharp.HTTP
         {
             
             _address = Dns.GetHostAddresses(domainName)[0];
+            InitTcpClient();
 
         }
+
+
+
+
+        private void InitTcpClient()
+        {
+
+            _client = new TcpClient();
+
+
+        }
+
+
 
         /// <summary>
         /// Asynchronously creates an HTTP connection to port 80 of the specified IP address.
@@ -44,15 +60,14 @@ namespace HttpGetterSharp.HTTP
         /// <returns>Returns true if the connection is successfully established; otherwise, false.</returns>
         public async Task<bool> CreateHttpConnection()
         {
-            TcpClient client;
+            
 
-            client = new TcpClient();
             try
             {
-                await client.ConnectAsync(_address, _port);
-                if (client.Connected)
-                    _stream = client.GetStream();
-                return client.Connected;
+                await _client.ConnectAsync(_address, _port);
+                if (_client.Connected)
+                    _stream = _client.GetStream();
+                return _client.Connected;
             }
             catch (Exception ex)
             {
@@ -118,6 +133,43 @@ namespace HttpGetterSharp.HTTP
             }
 
             return Encoding.UTF8.GetString(buffer, 0, totalBytesRead);
+        }
+
+        /// <summary>
+        /// Closes the current HTTP connection by closing and disposing the underlying stream and client.
+        /// Reads any remaining data from the stream, half-closes the connection, and disposes of the resources.
+        /// </summary>
+        /// <remarks>
+        /// This method ensures that all data in the stream is read before closing the connection.
+        /// It performs a half-close operation on the stream and disposes of the resources safely.
+        /// It terminates the connection according to the TCP standard by sending the FIN bit instead of RST.
+        /// </remarks>
+        async public Task CloseHttpConnection()
+        {
+            try
+            {
+                if (_stream != null)
+                {
+                    byte[] buffer = new byte[1024];
+                    while (await _stream.ReadAsync(buffer, 0, buffer.Length) > 0) { }
+
+                    _stream.Close();
+
+                    await _stream.DisposeAsync();
+                    _stream = null;
+                }
+
+                if (_client != null)
+                {
+                    _client.Close();
+                    _client.Dispose();
+                    _client = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error closing connection: {ex.Message}");
+            }
         }
 
     }
