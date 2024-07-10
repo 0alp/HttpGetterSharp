@@ -13,10 +13,10 @@ namespace HttpGetterSharp.HTTP
     /// </summary>
     internal class HttpConnectionService
     {
-        TcpClient _client;
+        TcpClient? _client;
         readonly IPAddress _address;
         readonly int _port = 80;
-        NetworkStream _stream;
+        NetworkStream? _stream;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HttpConnectionService"/> class with the specified IP address.
