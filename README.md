@@ -161,6 +161,30 @@ Content-Length: 1256
  }
 ```
 
+## Installation
+
+### .NET CLI
+
+```bash
+dotnet add package HttpGetterSharp --version 1.0.0
+```
+### Package Manager
+
+```bash
+NuGet\Install-Package HttpGetterSharp -Version 1.0.0
+```
+### PackageReference
+
+```bash
+<PackageReference Include="HttpGetterSharp" Version="1.0.0" />
+```
+### Packet CLI
+
+```bash
+paket add HttpGetterSharp --version 1.0.0
+```
+
+
 ## License :page_with_curl: 
 
 HttpGetterSharp is licensed under the MIT License. See the LICENSE file for details.
