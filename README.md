@@ -166,22 +166,22 @@ Content-Length: 1256
 ### .NET CLI
 
 ```bash
-dotnet add package HttpGetterSharp --version 1.0.0
+dotnet add package HttpGetterSharp --version 1.0.2
 ```
 ### Package Manager
 
 ```bash
-NuGet\Install-Package HttpGetterSharp -Version 1.0.0
+NuGet\Install-Package HttpGetterSharp -Version 1.0.2
 ```
 ### PackageReference
 
 ```bash
-<PackageReference Include="HttpGetterSharp" Version="1.0.0" />
+<PackageReference Include="HttpGetterSharp" Version="1.0.2" />
 ```
 ### Packet CLI
 
 ```bash
-paket add HttpGetterSharp --version 1.0.0
+paket add HttpGetterSharp --version 1.0.2
 ```
 
 
