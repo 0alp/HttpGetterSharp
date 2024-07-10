@@ -181,7 +181,7 @@ NuGet\Install-Package HttpGetterSharp -Version 1.0.3
 ### Packet CLI
 
 ```bash
-paket add HttpGetterSharp --version 1.0.2
+paket add HttpGetterSharp --version 1.0.3
 ```
 
 
