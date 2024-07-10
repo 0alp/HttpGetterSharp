@@ -11,7 +11,7 @@ namespace HttpGetterSharp.HTTP
     /// <summary>
     /// Provides functionality to create, send, and receive HTTP requests over a TCP network connection.
     /// </summary>
-    internal class HttpConnectionService
+    public class HttpConnectionService
     {
         TcpClient? _client;
         readonly IPAddress _address;

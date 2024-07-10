@@ -12,7 +12,7 @@ namespace HttpGetterSharp.HTTP
     /// <summary>
     /// Provides functionality to build HTTP GET request messages.
     /// </summary>
-    internal class HttpGetRequestBuilder : IHttpRequest
+    public class HttpGetRequestBuilder : IHttpRequest
     {
 
 

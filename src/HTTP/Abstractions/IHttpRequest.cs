@@ -9,7 +9,7 @@ namespace HttpGetterSharp.HTTP.Abstractions
     /// <summary>
     /// Defines the methods required to build HTTP request messages.
     /// </summary>
-    internal interface IHttpRequest
+    public interface IHttpRequest
     {
 
 
