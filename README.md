@@ -164,7 +164,7 @@ Content-Length: 1256
 ## Installation
 
 ### .NET CLI
-
+Versions prior to 1.0.3 have been deprecated due to critical issues. Please refrain from using them.
 ```bash
 dotnet add package HttpGetterSharp --version 1.0.3
 ```
@@ -184,6 +184,7 @@ NuGet\Install-Package HttpGetterSharp -Version 1.0.3
 paket add HttpGetterSharp --version 1.0.3
 ```
 
+Note : Versions prior to 1.0.3 have been deprecated due to critical issues. Please refrain from using them.
 
 ## License :page_with_curl: 
 
